@@ -1,4 +1,4 @@
-// for ex08
+// for ex08 and ex09
 
 #include "Graph.h"
 
