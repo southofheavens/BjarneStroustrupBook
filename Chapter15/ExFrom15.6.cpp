@@ -1,3 +1,9 @@
+/*
+    How to compile:
+    clang++ -std=c++20 -I/usr/local/include -L/usr/local/lib -lfltk -lfltk_images \
+    ExFrom15.6.cpp src/Simple_window.cpp src/Graph.cpp src/GUI.cpp src/Window.cpp
+*/
+
 #include "include/Window.h"
 #include "include/Graph.h"
 
