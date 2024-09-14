@@ -1,5 +1,37 @@
 /*
     Напишите функцию print_year(), упомянутую в разделе 10.11.2.
+
+    data.txt:
+    { year 1990 }
+    { year 1991 { month jun } }
+    { year 1992 { month jan (1 0 61.5) } { month feb (1 1 64) (2 2 65.2) } }
+    { year 2000
+        { month feb (1 1 68) (2 3 66.66) (1 0 67.2)}
+        { month dec (15 15 -9.2) (15 14 -8.8) (14 0 -2)}
+    }
+
+    result.txt:
+    1990
+
+    1991
+        jun:
+
+    1992
+        jan:
+            1 0 61.5
+        feb:
+            1 1 64
+            2 2 65.2
+
+    2000
+        feb:
+            1 0 67.2
+            1 1 68
+            2 3 66.66
+        dec:
+            14 0 -2
+            15 14 -8.8
+            15 15 -9.2
 */
 
 #include <iostream>
@@ -25,7 +57,7 @@ struct Day
 struct Month
 {
     int month {NOT_A_MONTH}; // [0,11] (январю соответствует 0)
-    std::vector<Day> day {32}; // [1,31] по одному вектору на день
+    std::vector<Day> day{32}; // [1,31] по одному вектору на день
 };
 
 struct Year
@@ -41,7 +73,7 @@ struct Reading
     double temperature;
 };
 
-std::istream& operator>>(std::istream& is, Reading& r)
+std::fstream& operator>>(std::fstream& is, Reading& r)
 // считываем показания температуры из потока is в r
 // формат: (3 4 9.7)
 // проверяем формат, но не корректность данных
@@ -102,7 +134,7 @@ bool IsValid(const Reading& r)
     return true;
 }
 
-std::istream& operator>>(std::istream& is, Month& m)
+std::fstream& operator>>(std::fstream& is, Month& m)
 // считываем объект класса Month из потока is в объект m
 // формат: { month feb ... }
 {
@@ -155,7 +187,7 @@ std::istream& operator>>(std::istream& is, Month& m)
     return is;
 }
 
-std::istream& operator>>(std::istream& is, Year& y)
+std::fstream& operator>>(std::fstream& is, Year& y)
 // считываем объект класса Year из потока is в объект y
 // формат: { year 1972 ... }
 {
@@ -177,25 +209,43 @@ std::istream& operator>>(std::istream& is, Year& y)
         exit(6);
     }
     y.year = yy;
-    while(true) {
-            Month m;        // get a clean m each time around
-            if (!(is >> m)) break;
-            y.month[m.month] = m;
-        }
+    while(true) 
+    {
+        Month m;
+        if (!(is >> m)) break;
+        y.month[m.month] = m;
+    }
     
     EndOfLoop(is, '}', "Неправильный конец Year");
     return is;
 }
 
+void PrintYear(std::fstream& ofs, Year y)
+{
+    ofs << y.year << '\n';
+    for(Month& month : y.month)
+    {
+        if (month.month != NOT_A_MONTH)
+        {
+            ofs << '\t' << monthes[month.month] << ":\n";
+            for (int i = 0; i < month.day.size(); ++i)
+            {
+                for (int j = 0; j < month.day[i].hour.size(); ++j)
+                {
+                    if (month.day[i].hour[j] != NOT_A_READING) {
+                        ofs << "\t\t" << i << ' ' << j << ' ' << month.day[i].hour[j] << '\n';
+                    }
+                }
+            }
+        }
+    }
+    ofs << "\n";
+}
+
 int main()
 {
     std::fstream ifs;
-    ifs.open("data", std::ios_base::in);
-    // генерация исключения в случае состояния bad()
-    ifs.exceptions(ifs.exceptions() | std::ios_base::failbit);
-    
-    std::fstream ofs;
-    ofs.open("result", std::ios_base::out);
+    ifs.open("data.txt", std::ios_base::in);
     
     std::vector<Year> ys;
     while(true)
@@ -205,6 +255,16 @@ int main()
         ys.push_back(y);
     }
     
+    std::fstream ofs;
+    ofs.open("result.txt", std::ios_base::out);
     
+    std::cout << "Считано " << ys.size() << " годичных записей\n";
+    
+    for(Year& y : ys) {
+        PrintYear(ofs, y);
+    }
+    
+    ofs.close();
+    ifs.close();
     return 0;
 }
