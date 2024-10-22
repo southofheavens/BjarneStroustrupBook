@@ -66,19 +66,25 @@ template<typename T>
 std::istream& operator>>(std::istream& is, std::vector<T>& vec)
 {
     char ch;
-    T var;
     is >> ch;
+    if (ch != '{')
+    {
+        is.clear(std::ios_base::failbit);
+        return is;
+    }
     for (T var; is >> var;)
     {
         vec.push_back(var);
         is >> ch;
-        if (ch != ',') {
+        if (ch != ',') 
+        {
             is.clear(std::ios_base::failbit);
             return is;
         }
     }
     is >> ch;
-    if (ch != '}') {
+    if (ch != '}') 
+    {
         is.clear(std::ios_base::failbit);
         return is;
     }

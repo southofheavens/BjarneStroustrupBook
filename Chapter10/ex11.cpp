@@ -11,7 +11,7 @@
 
 int main()
 {
-    std::ifstream ifs{"result.txt", std::ios::in};
+    std::ifstream ifs{"numbers.txt", std::ios::in};
     
     std::vector<std::string> potentialNums;
     std::string potentialNum;

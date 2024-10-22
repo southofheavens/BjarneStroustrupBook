@@ -4,7 +4,7 @@
     примерами. Указание: поищите "размещающий new" и "явный вызов деструктора" в полном справочнике по C++.
 */
 
-#include "vector_v1.0.h"
+#include "vector.h"
 #include <iostream>
 
 template<typename T>

@@ -1,9 +1,10 @@
-// for ex08
+// for ex08 and 09
 
 #include <initializer_list>
 #include <new>
 #include <iostream>
 
+// for ex08
 template<typename T>
 class allocator
 {
@@ -17,7 +18,7 @@ public:
     // void deallocate(T* p, int n);
     //
     // Мне кажется, что это то ли опечатка, то ли что-то в этом роде
-    // Потому что я без понятия, как освободить память, занятую n объектами,
+    // Потому, что я без понятия, как освободить память, занятую n объектами,
     // начиная с адреса p
     
     // Освобождение памяти, занятой объектами типа T с адреса p
@@ -70,7 +71,7 @@ private:
 };
 
 template<typename T, typename A>
-vector<T,A>::vector(std::initializer_list<T> lst) : sz{(int)lst.size()}, elem{new T[sz]}, space{sz} 
+vector<T,A>::vector(std::initializer_list<T> lst) : sz{(int)lst.size()}, elem{new T[sz]}, space{sz}
 {
     std::copy(lst.begin(), lst.end(), elem);
 }
@@ -81,6 +82,7 @@ vector<T,A>::vector(vector& arg) : sz{arg.sz}, elem{new T[arg.sz]}, space{arg.sp
     std::copy(arg.elem,arg.elem+sz,elem);
 }
 
+// for ex09
 template<typename T, typename A>
 vector<T,A>& vector<T,A>::operator=(vector& arg)
 {
@@ -97,11 +99,11 @@ vector<T,A>& vector<T,A>::operator=(vector& arg)
         return *this;
     }
     
-    T* p = new T[arg.sz];
+    T* p = alloc.allocate(arg.sz);
     for (int i = 0; i < arg.sz; ++i) {
         p[i] = arg.elem[i];
     }
-    delete[] elem;
+    alloc.deallocate(elem);
     space = sz = arg.sz;
     elem = p;
     

@@ -2,10 +2,10 @@
 
 ShapeWindow::ShapeWindow(Point xy, int w, int h, const string& title)
 : MyWindow(xy,w,h,title),
-c{{x,y},100},
+c{{0,0},100},
 r{{-int(100*sqrt(2)/(double)2),-int(100*sqrt(2)/(double)2)},int(100*sqrt(2)),int(100*sqrt(2))},
-rt{{x,y},100},
-rh{{x,y},100},
+rt{{0,0},100},
+rh{{0,0},100},
 ShapeMenu{{0,0},200,20,Menu::vertical,"Фигуры"},
 Circle{{0,0},0,0,"Окружность",[](Address, Address pw){
         reference_to<ShapeWindow>(pw).DrawCircle();}},
