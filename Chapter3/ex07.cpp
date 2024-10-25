@@ -1,7 +1,7 @@
 /*
-    Выполните упр. 6 для трех строковых значений. Так, если пользователь вводит значения Steinbeck,
-    Hemingway, Fitzgerald, то вывод программы должен имеет вид Fitzgerald, Hemingway, Steinbeck.
-*/
+ * Выполните упр. 6 для трех строковых значений. Так, если пользователь вводит значения Steinbeck,
+ * Hemingway, Fitzgerald, то вывод программы должен имеет вид Fitzgerald, Hemingway, Steinbeck.
+ */
 
 #include <iostream>
 #include <string>
