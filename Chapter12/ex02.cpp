@@ -1,6 +1,10 @@
 /*
-    Нарисуйте объект класса Rectangle с размерами 100x30 и поместите в него текст "Howdy!"
-*/
+ * Нарисуйте объект класса Rectangle с размерами 100x30 и поместите в него текст "Howdy!"
+ *
+ * How to compile:
+ * clang++ -std=c++14 -I/usr/local/include -L/usr/local/lib -lfltk -lfltk_images \
+ * ex02.cpp src/Simple_window.cpp src/Graph.cpp src/GUI.cpp src/Window.cpp
+ */
 
 #include "include/Simple_window.h"
 #include "include/Graph.h"

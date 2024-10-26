@@ -1,6 +1,10 @@
 /*
-    Нарисуйте доску для игры в крестики-нолики размером 3x3, чередуя белые и красные квадраты.
-*/
+ * Нарисуйте доску для игры в крестики-нолики размером 3x3, чередуя белые и красные квадраты.
+ * 
+ * How to compile:
+ * clang++ -std=c++14 -I/usr/local/include -L/usr/local/lib -lfltk -lfltk_images \
+ * ex04.cpp src/Simple_window.cpp src/Graph.cpp src/GUI.cpp src/Window.cpp
+ */
 
 #include "include/Simple_window.h"
 #include "include/Graph.h"

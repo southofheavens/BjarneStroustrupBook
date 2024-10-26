@@ -1,7 +1,11 @@
 /*
-    Нарисуйте двумерный дом анфас, как это делают дети: дверь, два окна и крыша с дымовой
-    трубой. Детали можете выбрать сами, можете даже нарисовать дымок из трубы.
-*/
+ * Нарисуйте двумерный дом анфас, как это делают дети: дверь, два окна и крыша с дымовой
+ * трубой. Детали можете выбрать сами, можете даже нарисовать дымок из трубы.
+ * 
+ * How to compile:
+ * clang++ -std=c++14 -I/usr/local/include -L/usr/local/lib -lfltk -lfltk_images \
+ * ex07.cpp src/Simple_window.cpp src/Graph.cpp src/GUI.cpp src/Window.cpp
+ */
 
 #include "include/Simple_window.h"
 #include "include/Graph.h"

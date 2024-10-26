@@ -1,7 +1,11 @@
 /*
-    Нарисуйте свои инициалы высотой 150 пикселей. Используйте толстую линию. Нарисуйте  каждый инициал
-    другим цветом.
-*/
+ * Нарисуйте свои инициалы высотой 150 пикселей. Используйте толстую линию. Нарисуйте  каждый инициал
+ * другим цветом.
+ * 
+ * How to compile:
+ * clang++ -std=c++14 -I/usr/local/include -L/usr/local/lib -lfltk -lfltk_images \
+ * ex03.cpp src/Simple_window.cpp src/Graph.cpp src/GUI.cpp src/Window.cpp
+ */
 
 #include "include/Simple_window.h"
 #include "include/Graph.h"

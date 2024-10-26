@@ -1,7 +1,11 @@
 /*
-    Нарисуйте красную рамку шириной полсантиметра вокруг прямоугольника, высота которого составляет
-    три четверти высоты вашего экрана, а ширине - две трети ширины экрана.
-*/
+ * Нарисуйте красную рамку шириной полсантиметра вокруг прямоугольника, высота которого составляет
+ * три четверти высоты вашего экрана, а ширине - две трети ширины экрана.
+ * 
+ * How to compile:
+ * clang++ -std=c++14 -I/usr/local/include -L/usr/local/lib -lfltk -lfltk_images \
+ * ex05.cpp src/Simple_window.cpp src/Graph.cpp src/GUI.cpp src/Window.cpp
+ */
 
 #include "include/Simple_window.h"
 #include "include/Graph.h"
