@@ -1,11 +1,11 @@
 /*
-    Определите класс прямоугольного треугольника. Составьте восьмиугольник из восьми прямоугольных треугольников
-    разного цвета.
-
-    How to compile:
-    clang++ -std=c++20 -I/usr/local/include -L/usr/local/lib -lfltk -lfltk_images \
-    ex14.cpp src/Simple_window.cpp src/Graph.cpp src/GUI.cpp src/Window.cpp src/RightTriangle.cpp
-*/
+ * Определите класс прямоугольного треугольника. Составьте восьмиугольник из восьми прямоугольных треугольников
+ * разного цвета.
+ *
+ * How to compile:
+ * clang++ -std=c++14 -I/usr/local/include -L/usr/local/lib -lfltk -lfltk_images \
+ * ex14.cpp src/Simple_window.cpp src/Graph.cpp src/GUI.cpp src/Window.cpp src/RightTriangle.cpp
+ */
 
 #include "include/Graph.h"
 #include "include/Simple_window.h"

@@ -2,20 +2,20 @@
 #include <stdexcept>
 
 template<typename Elem>
-struct Link
-{
-    Link* prev; // Предыдущий узел
-    Link* succ; // Следующий узел
-    Elem val;   // Значение
-    
-    Link(const Elem& v = Elem{0}, Link* p = nullptr, Link* s = nullptr) :
-    val{v}, prev{p}, succ{s} {}
-};
-
-template<typename Elem>
 class list
 {
 private:
+    template<typename El>
+    struct Link
+    {
+        Link* prev; // Предыдущий узел
+        Link* succ; // Следующий узел
+        El val;   // Значение
+        
+        Link(const El& v = El{0}, Link* p = nullptr, Link* s = nullptr) :
+        val{v}, prev{p}, succ{s} {}
+    };
+
     Link<Elem>* first;
     Link<Elem>* last;   // Узел, находящийся за последним узлом
     

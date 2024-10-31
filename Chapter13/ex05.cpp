@@ -1,7 +1,11 @@
 /*
-    Определите функции из упр. 4 для классов Circle и Ellipse. Разместите точки подключения внутри или вне фигур,
-    но не за пределами описанного вокруг них прямоугольника.
-*/
+ * Определите функции из упр. 4 для классов Circle и Ellipse. Разместите точки подключения внутри или вне фигур,
+ * но не за пределами описанного вокруг них прямоугольника.
+ * 
+ * How to compile:
+ * clang++ -std=c++14 -I/usr/local/include -L/usr/local/lib -lfltk -lfltk_images \
+ * ex05.cpp src/Simple_window.cpp src/Graph.cpp src/GUI.cpp src/Window.cpp 
+ */
 
 #include "include/Graph.h"
 

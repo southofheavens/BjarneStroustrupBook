@@ -1,6 +1,6 @@
 /*
  * Выведите на экран фотографию вашего друга. Напишите его имя в заголовке окна и в заголовке внутри окна.
-
+ *
  * How to compile:
  * clang++ -std=c++14 -I/usr/local/include -L/usr/local/lib -lfltk -lfltk_images \
  * ex09.cpp src/Simple_window.cpp src/Graph.cpp src/GUI.cpp src/Window.cpp
@@ -19,7 +19,7 @@ int main()
 
     Text t(Point{225, 30}, "My friend Hans");
     t.set_font(Font::times_bold);
-    t.set_font_size(20);
+    t.set_font_size(18);
     win.attach(t);
 
     win.wait_for_button();

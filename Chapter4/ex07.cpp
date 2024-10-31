@@ -1,9 +1,12 @@
 /*
-    Модифицируйте мини-калькулятор, описанный в упр.5, так, чтобы он принимал на вход цифры, записанные
-    как в числовом, так и в строковом формате.
-*/
+ * Модифицируйте мини-калькулятор, описанный в упр.5, так, чтобы он принимал на вход цифры, записанные
+ * как в числовом, так и в строковом формате.
+ * 
+ * How to compile:
+ * clang++ -std=c++14 ex07.cpp
+ */
 
-#include <iostream>
+#include <iostream> 
 #include <string>
 #include <vector>
 
@@ -18,8 +21,7 @@ int main()
     int integerDig1;
     int integerDig2;
 
-    if (dig1.length() == 1 && isdigit(dig1[0]))
-    {
+    if (dig1.length() == 1 && isdigit(dig1[0])) {
         integerDig1 = dig1[0] - '0';
     }
     else
@@ -33,14 +35,12 @@ int main()
                 isThisDigit = true;
             }
         }
-        if (!isThisDigit)
-        {
+        if (!isThisDigit) {
             std::cout << "Вы ввели некорректное значение!\n";
         }
     }
 
-    if (dig2.length() == 1 && isdigit(dig2[0]))
-    {
+    if (dig2.length() == 1 && isdigit(dig2[0])) {
         integerDig2 = dig2[0] - '0';
     }
     else
@@ -54,8 +54,7 @@ int main()
                 isThisDigit = true;
             }
         }
-        if (!isThisDigit)
-        {
+        if (!isThisDigit) {
             std::cout << "Вы ввели некорректное значение!\n";
         }
     }
@@ -72,13 +71,13 @@ int main()
             std::cout << "Произведение " << integerDig1 << " и " << integerDig2 << " равно " << integerDig1 * integerDig2 << '\n';
             break;
         case '/':
-            if (integerDig2 == 0)
-            {
+            if (integerDig2 == 0) {
                 std::cout << "Деление на ноль запрещено!\n";
             }
             else
             {
-                std::cout << "Частное " << integerDig1 << " и " << integerDig2 << " равно " << integerDig1 / (double)integerDig2 << '\n';
+                std::cout << "Частное " << integerDig1 << " и " << integerDig2 << " равно "
+                    << integerDig1 / (double)integerDig2 << '\n';
             }
             break;
         default:

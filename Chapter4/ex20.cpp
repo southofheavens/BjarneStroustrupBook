@@ -1,7 +1,10 @@
 /*
-    Измените программу из упр. 19 так, чтобы при вводе имени она выводила соответствующее количество
-    баллов или сообщение "Имя не найдено".
-*/
+ * Измените программу из упр. 19 так, чтобы при вводе имени она выводила соответствующее количество
+ * баллов или сообщение "Имя не найдено".
+ * 
+ * How to compile:
+ * clang++ -std=c++14 ex20.cpp
+ */
 
 #include <iostream>
 #include <string>
@@ -29,14 +32,12 @@ int main()
     bool anyRepeats = false;
     for (int i = 0; i < checkNames.size() - 1; ++i)
     {
-        if (checkNames[i] == checkNames[i + 1])
-        {
+        if (checkNames[i] == checkNames[i + 1]) {
             anyRepeats = true;
         }
     }
     std::cout << "---\n";
-    if(anyRepeats)
-    {
+    if(anyRepeats) {
         std::cout << "Каждое имя должно быть единственным!\n";
     }
     else
@@ -51,8 +52,7 @@ int main()
                 std::cout << scores[i] << '\n';
                 break;
             }
-            else if (i == names.size() - 1)
-            {
+            else if (i == names.size() - 1) {
                 std::cout << "Имя не найдено\n";
             }
         }

@@ -1,6 +1,10 @@
 /*
-    Определите класс Arc, рисующий часть эллипса. Указание: fl_arc();
-*/
+ * Определите класс Arc, рисующий часть эллипса. Указание: fl_arc();
+ * 
+ * How to compile:
+ * clang++ -std=c++14 -I/usr/local/include -L/usr/local/lib -lfltk -lfltk_images \
+ * ex01.cpp src/Simple_window.cpp src/Graph.cpp src/GUI.cpp src/Window.cpp src/Arc.cpp
+ */
 
 #include "include/Arc.h"
 #include "include/Simple_window.h"

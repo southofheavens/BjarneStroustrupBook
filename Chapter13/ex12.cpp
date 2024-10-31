@@ -1,11 +1,11 @@
 /*
-    Нарисуйте окружность. Заставьте метку перемещаться по окружности (пусть она немного сдвигается
-    всякий раз, когда вы щелкаете на кнопке Next).
-
-    How to compile:
-    clang++ -std=c++11 -I/usr/local/include -L/usr/local/lib -lfltk -lfltk_images \
-    ex12.cpp src/Simple_window.cpp src/Graph.cpp src/GUI.cpp src/Window.cpp
-*/
+ * Нарисуйте окружность. Заставьте метку перемещаться по окружности (пусть она немного сдвигается
+ * всякий раз, когда вы щелкаете на кнопке Next).
+ *
+ * How to compile:
+ * clang++ -std=c++14 -I/usr/local/include -L/usr/local/lib -lfltk -lfltk_images \
+ * ex12.cpp src/Simple_window.cpp src/Graph.cpp src/GUI.cpp src/Window.cpp
+ */
 
 #include "include/Simple_window.h"
 

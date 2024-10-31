@@ -1,6 +1,10 @@
 /*
-    Нарисуйте окно с закругленными углами. Определите класс Box, состоящий из четырех линий и четырех дуг.
-*/  
+ * Нарисуйте окно с закругленными углами. Определите класс Box, состоящий из четырех линий и четырех дуг.
+ *
+ * How to compile:
+ * clang++ -std=c++14 -I/usr/local/include -L/usr/local/lib -lfltk -lfltk_images \
+ * ex02.cpp src/Simple_window.cpp src/Graph.cpp src/GUI.cpp src/Window.cpp src/Box.cpp
+ */ 
 
 #include "include/Box.h"
 #include "include/Simple_window.h"

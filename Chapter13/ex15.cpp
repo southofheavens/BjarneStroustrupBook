@@ -1,12 +1,12 @@
 /*
-    Покройте окно мозаикой из маленьких прямоугольных треугольников.
-
-    P.S. Про цвета ничего не было сказано, поэтому я решил разукрасить треугольники разными цветами.
-
-    How to compile:
-    clang++ -std=c++11 -I/usr/local/include -L/usr/local/lib -lfltk -lfltk_images \
-    ex15.cpp src/Simple_window.cpp src/Graph.cpp src/GUI.cpp src/Window.cpp src/RightTriangle.cpp
-*/
+ * Покройте окно мозаикой из маленьких прямоугольных треугольников.
+ *
+ * P.S. Про цвета ничего не было сказано, поэтому я решил разукрасить треугольники разными цветами.
+ *
+ * How to compile:
+ * clang++ -std=c++14 -I/usr/local/include -L/usr/local/lib -lfltk -lfltk_images \
+ * ex15.cpp src/Simple_window.cpp src/Graph.cpp src/GUI.cpp src/Window.cpp src/RightTriangle.cpp
+ */
 
 #include "include/Graph.h"
 #include "include/Simple_window.h"

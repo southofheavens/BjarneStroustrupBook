@@ -1,11 +1,11 @@
 /*
-    Определите класс Regular_hexagon (правильный шестиугольник). В качестве аргументов конструктора используйте
-    центр и расстояние от центра до угловой точки.
-
-    How to compile:
-    clang++ -std=c++20 -I/usr/local/include -L/usr/local/lib -lfltk -lfltk_images \
-    ex08.cpp src/Simple_window.cpp src/Graph.cpp src/GUI.cpp src/Window.cpp src/RegularHexagon.cpp
-*/
+ * Определите класс Regular_hexagon (правильный шестиугольник). В качестве аргументов конструктора используйте
+ * центр и расстояние от центра до угловой точки.
+ *
+ * How to compile:
+ * clang++ -std=c++14 -I/usr/local/include -L/usr/local/lib -lfltk -lfltk_images \
+ * ex08.cpp src/Simple_window.cpp src/Graph.cpp src/GUI.cpp src/Window.cpp src/RegularHexagon.cpp
+ */
 
 #include "include/RegularHexagon.h"
 #include "include/Simple_window.h"

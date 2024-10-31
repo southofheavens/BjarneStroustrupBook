@@ -1,7 +1,10 @@
 /*
-    Напишите программу, определяющую наименьшее и наибольшее значениия, а также моду последовательности
-    строк типа string.
-*/
+ * Напишите программу, определяющую наименьшее и наибольшее значениия, а также моду последовательности
+ * строк типа string.
+ * 
+ * How to compile:
+ * clang++ -std=c++14 ex17.cpp
+ */
 
 #include <iostream>
 #include <vector>
@@ -11,8 +14,7 @@
 int main()
 {
     std::vector<std::string> words;
-    for(std::string word; std::cin >> word; )
-    {
+    for(std::string word; std::cin >> word; ) {
         words.push_back(word);
     }
     sort(words.begin(), words.end());
@@ -24,8 +26,7 @@ int main()
     int coincidences = 0;
     for(int i = 0; i < words.size() - 1; ++i)
     {
-        if (words[i] == words[i + 1])
-        {
+        if (words[i] == words[i + 1]) {
             coincidences++;
         }
         else

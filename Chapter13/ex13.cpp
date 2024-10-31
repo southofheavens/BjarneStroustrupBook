@@ -1,6 +1,10 @@
 /*
-    Нарисуйте матрицу цветов из раздела 13.10, но без линий, окаймляющих каждый квадрат.
-*/
+ * Нарисуйте матрицу цветов из раздела 13.10, но без линий, окаймляющих каждый квадрат.
+ *
+ * How to compile:
+ * clang++ -std=c++14 -I/usr/local/include -L/usr/local/lib -lfltk -lfltk_images \
+ * ex13.cpp src/Simple_window.cpp src/Graph.cpp src/GUI.cpp src/Window.cpp
+ */
 
 #include "include/Graph.h"
 #include "include/Simple_window.h"
