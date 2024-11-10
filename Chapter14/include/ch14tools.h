@@ -1,7 +1,5 @@
 #include "Graph.h"
 #include <cmath>  // for ex08
-#include <vector> // for ex15
-#include <list>   // for ex15
 
 using namespace Graph_lib;
 
